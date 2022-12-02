@@ -47,6 +47,17 @@ void main(){
         else if(KeyNumber>=12&&KeyNumber<=15){
             i=2;
             point=0;
+            if(ans!=0){//如果有结果，将结果作为第一个数
+                num1=ans;
+                num2=0.0;
+                ans=0.0;
+                LCD_Init();
+                LCD_ShowNum(0,0,ansH,4);
+                if(ansL!=0){
+                    LCD_ShowChar(0,4,'.');
+                    LCD_ShowNum(0,5,ansL,2);
+                }
+            }
             switch(KeyNumber){
                 case 12:
                     LCD_ShowChar(0,0,'/');method=1;break;
